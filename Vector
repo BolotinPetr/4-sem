@@ -1,0 +1,24 @@
+class Nvector:
+    def __init__(self, coords):
+        self.n = len(coords)
+        self.coords = coords
+    def set_coords(self, new_coords):
+        self.coords = new_coords
+    def print_coords(self):
+        print self.coords
+    def __add__(self, vector):
+        if (vector.n == self.n):
+            for i in range(len(self.coords)):
+                self.coords[i] = self.coords[i] + vector.coords[i]
+        return self
+    def sub(self, vector):
+        for i in range(len(vector.coords)):
+            self.coords[i] -= vector.coords[i]
+    def scalarProduct(self, vector):
+        for i in range(len(vector.coords)):
+            self.coords[i] *= vector.coords[i]
+
+vector1 = Nvector([1, 4, 5])
+vector2 = Nvector([1, 10, 13])
+vector1.scalarProduct(vector2)
+vector1.print_coords()
