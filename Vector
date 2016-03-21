@@ -7,10 +7,11 @@ class Nvector:
     def print_coords(self):
         print self.coords
     def __add__(self, vector):
-        if (vector.n == self.n):
-            for i in range(len(self.coords)):
-                self.coords[i] = self.coords[i] + vector.coords[i]
-        return self
+        newVector = self
+        if (vector.n == newVector.n):
+            for i in range(len(newVector.coords)):
+                newVector.coords[i] = newVector.coords[i] + vector.coords[i]
+        return newVector
     def sub(self, vector):
         for i in range(len(vector.coords)):
             self.coords[i] -= vector.coords[i]
