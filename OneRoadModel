@@ -1,0 +1,21 @@
+import Driver
+import pygame
+
+class Model:
+    def __init__(self):
+        self._running = True
+        self.size = self.width, self.height = 640, 400
+        self.screen = pygame.display.set_mode(self.size, pygame.HWSURFACE)
+        pygame.display.set_caption('OneRoadModel')
+    def event_handler(self, event):
+        if event.type == pygame.QUIT:
+            self.exit()
+        elif event.type == pygame.KEYDOWN:
+            if event.type == pygame.K_ESCAPE:
+                self.exit()
+    def execute(self):
+        while(self._running):
+            for event in pygame.event.get():
+                self.event_handler(event)
+            self.move()
+            self.render()
