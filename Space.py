@@ -100,7 +100,7 @@ class Space:
 
     def calculate(self, change_light):
         def generate_driver():
-            if random.randint(1, 10000) < 20:
+            if random.randint(1, 10000) < 10:
                 x = y = 0
                 for row in level:
                     for col in row:
