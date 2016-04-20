@@ -61,7 +61,7 @@ class Driver(sprite.Sprite):
             if self.y < 0:
                 a = False
             self.x += self.dir[0] * 5
-            self.y -= self.dir[1] * 5
+            self.y += self.dir[1] * 5
             self.rect = Rect(self.x, self.y, ROAD_WIDTH, ROAD_WIDTH)
             # driver.leaders.remove(driver)
             for leader in self.leaders:
@@ -201,7 +201,7 @@ class Driver(sprite.Sprite):
             else:
                 self.vy += self.ay * dt
                 if abs(self.vy) > 0:
-                    self.y -= self.vy * dt
+                    self.y += self.vy * dt
 
     def update(self):
         self.save_dir_light()

@@ -1,6 +1,6 @@
 import pygame
 import Road
-import Driver2 as Driver
+import Driver as Driver
 import random
 from pygame import *
 
