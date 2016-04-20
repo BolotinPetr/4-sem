@@ -45,11 +45,9 @@ class Driver(sprite.Sprite):
                     if self.dir_light == self.dir:
                         self.dir = b.branches[random.randint(0, 2)]
                     else:
-                        print 'dir_light != dir'
                         while a:
                             rand = random.randint(0, 2)
                             if b.branches[rand] != (-1*self.dir_light[0], -1*self.dir_light[1]):
-                                print 'lol'
                                 a = False
                                 self.dir = b.branches[rand]
                 self.branch_points.remove(b)
@@ -203,6 +201,8 @@ class Driver(sprite.Sprite):
                 if abs(self.vy) > 0:
                     self.y += self.vy * dt
 
+    # interface method
+
     def update(self):
         self.save_dir_light()
         self.drivers.remove(self)
@@ -225,7 +225,7 @@ class Driver(sprite.Sprite):
             self.move(True)
 
         self.rect = Rect(self.x, self.y, DRIVER_WIDTH, DRIVER_HEIGHT)
-        self.image.fill(Color(self.color))
+        self.image.fill(Color(self.color))    # main #
 
     def delete(self, driver):
         self.drivers.remove(driver)
