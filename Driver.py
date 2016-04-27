@@ -213,7 +213,7 @@ class Driver(sprite.Sprite):
         # print t1.timeit(number=1), t2.timeit(number=1), t4.timeit(number=1)
         self.choose_direction()
         self.find_the_leader()
-        self.leader = self.check_next_driver()
+        # self.leader = self.check_next_driver()
         self.calculate_acceleration()
         # print self.dir, self.dir_light
         if self.crossroad():
